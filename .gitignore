@@ -1,5 +1,6 @@
 vendor
 node_modules
 dist
+.DS_Store
 
 tailwind.js
