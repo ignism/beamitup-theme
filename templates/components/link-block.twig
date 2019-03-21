@@ -1,0 +1,16 @@
+<div class="w-full hover-up">
+<a href="#">
+    {% include "components/block.twig" with {
+        orientation : orientation,
+        image: "",
+        color: "grey"
+    } %}
+    <div class="text-xl mt-2">
+        {{ title }}
+    </div>
+    <div class="flex flex-wrap justify-between items-end">
+        <span class="text-xl">{{ subtitle }}</span>
+        <img src="{{ theme.link}}/assets/arrow.svg">
+    </div>
+</a>
+</div>

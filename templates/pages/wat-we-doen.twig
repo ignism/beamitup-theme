@@ -1,0 +1,194 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <header>
+        {% include "components/block.twig" with {
+            orientation: 'landscape-double',
+            color: 'grey-dark'
+        } %}
+    </header>
+
+    <section class="w-full" style="transform: translate(0, -10%)">
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-6/12 ml-5/12">
+
+                {% include "partials/text-block.twig" with {
+                    title: 'Wat we doen',
+                    color: 'yellow',
+                    background: 'blue'
+                } %}
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-full my-32 relative">
+        <div class="absolute pin">
+            {% include "components/block.twig" with {
+                orientation: 'landscape-triple',
+                color: 'yellow'
+            } %}
+        </div>
+
+        <div class="flex flex-wrap -mx-5 pt-16">
+
+            <div class="w-6/12 ml-1/12 px-5">
+
+                {% include "partials/text-block.twig" with {
+                    title: 'Workshops',
+                    color: 'yellow',
+                    background: 'green'
+                } %}
+
+            </div>
+
+            <div class="w-4/12 px-5 mt-20">
+
+                {% include "components/link-block.twig" with {
+                    orientation : "portrait",
+                    image: "",
+                    title: "Project",
+                    subtitle: "Klant"
+                } %}
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-full my-32 relative">
+        <div class="absolute pin">
+            {% include "components/block.twig" with {
+                orientation: 'landscape-triple',
+                color: 'pink'
+            } %}
+        </div>
+
+        <div class="flex flex-wrap -mx-5 pt-16">
+            <div class="w-4/12 ml-1/12 px-5 mt-20">
+
+                {% include "components/link-block.twig" with {
+                    orientation : "portrait",
+                    image: "",
+                    title: "Project",
+                    subtitle: "Klant"
+                } %}
+
+            </div>
+
+            <div class="w-6/12 px-5">
+
+                {% include "partials/text-block.twig" with {
+                    title: 'Workshops',
+                    color: 'yellow',
+                    background: 'green'
+                } %}
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-full my-32 relative">
+        <div class="absolute pin">
+            {% include "components/block.twig" with {
+                orientation: 'landscape-triple',
+                color: 'blue'
+            } %}
+        </div>
+
+        <div class="flex flex-wrap -mx-5 pt-16">
+
+            <div class="w-6/12 ml-1/12 px-5">
+
+                {% include "partials/text-block.twig" with {
+                    title: 'Workshops',
+                    color: 'yellow',
+                    background: 'green'
+                } %}
+
+            </div>
+
+            <div class="w-4/12 px-5 mt-20">
+
+                {% include "components/link-block.twig" with {
+                    orientation : "portrait",
+                    image: "",
+                    title: "Project",
+                    subtitle: "Klant"
+                } %}
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-full my-32 relative">
+        <div class="absolute pin">
+            {% include "components/block.twig" with {
+                orientation: 'landscape-triple',
+                color: 'yellow-darker'
+            } %}
+        </div>
+
+        <div class="flex flex-wrap -mx-5 pt-16">
+            <div class="w-4/12 ml-1/12 px-5 mt-20">
+
+                {% include "components/link-block.twig" with {
+                    orientation : "portrait",
+                    image: "",
+                    title: "Project",
+                    subtitle: "Klant"
+                } %}
+
+            </div>
+
+            <div class="w-6/12 px-5">
+
+                {% include "partials/text-block.twig" with {
+                    title: 'Workshops',
+                    color: 'yellow',
+                    background: 'green'
+                } %}
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-full my-32">
+        {% include "components/slider.twig" with {
+            slides : [
+                {
+                    text: "Greenscreen<br>workshop"
+                }, {
+                    text: "2"
+                }, {
+                    text: "3"
+                }
+            ],
+            width: "100%",
+            height: "50vw",
+            pagination: true
+        } %}
+    </section>
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5 text-xl">
+            <div class="px-5 ml-1/12 w-10/12">
+
+                <div class="block-outer">
+                    <div class="block-inner landscape-double">
+                        <div class="content bg-yellow flex items-center justify-center" style="background-image: url()"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

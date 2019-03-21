@@ -1,43 +1,36 @@
 {% block html_head_container %}
-  {% include 'header.twig' %}
-  {% block head %}{% endblock %}
+    {% include "header.twig" %}
+    {% block head %}{% endblock %}
 </head>
 {% endblock %}
 
-<body class="px-8 max-w-5xl mx-auto {{body_class}}" data-template="base.twig">
+<body class="max-w-5xl mt-20 mx-auto {{body_class}}" data-template="base.twig">
 
-<header class="header">
-  {% block header %}
-    <div class="wrapper">
-      <h1 class="hdr-logo" role="banner">
-        <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-      </h1>
-      <nav id="nav-main" class="nav-main" role="navigation">
-        {% include "partials/menu.twig" with {
-          'menu' : menu.get_items
-        } %}
-      </nav>
-      <!-- #nav -->
-    </div>
-  {% endblock %}
-</header>
+{% block header %}
+    <nav class="nav max-w-5xl mx-auto fixed z-50 pin-t w-full flex items-end" role="navigation">
+        <div class="-mx-5 w-full flex flex-wrap justify-between items-end">
+            <div class="w-2/12 px-5 ml-1/12">
+                <h1>Beam it Up</h1>
+            </div>
+            <div class="flex-grow flex items-end px-5 mr-1/12">
+                {% include "components/menu.twig" with {
+                    "menu" : menu.get_items
+                } %}
+            </div>
+        </div>
+    </nav>
+{% endblock %}
 
-<section id="content" role="main" class="content-wrapper">
-  {% if title %}
-    <h1>{{title}}</h1>
-  {% endif %}
-  <div class="wrapper {{sidebar_class}}">
-    {% block content %}
-      Sorry, no content
-    {% endblock %}
-  </div>
-</section>
+
+{% block content %}
+    Sorry, no content
+{% endblock %}
+
 
 {% block footer %}
-  <footer id="footer">
-    {% include 'footer.twig' %}
-  </footer>
-  {{ function('wp_footer') }}
+    {{ function('wp_footer') }}
 {% endblock %}
+
+{% include "footer.twig" %}
 </body>
 </html>

@@ -1,0 +1,20 @@
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        {% for slide in slides %}
+            <div class="swiper-slide bg-grey-light relative" style="width: {{ width }}; height: {{ height }}">
+                <div class="slider-text absolute pin-t pin-l ml-1/12 mt-3/12">
+                    {% include "components/highlight.twig" with {
+                        text : slide.text,
+                        color: 'blue',
+                        background: 'yellow'
+                    } %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if pagination == true %}
+        <div class="swiper-pagination"></div>
+    {% endif %}
+
+</div>

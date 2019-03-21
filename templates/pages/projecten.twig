@@ -1,0 +1,280 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <header>
+        <div class="block-outer">
+            <div class="block-inner landscape-triple">
+                <div class="text-4xl content bg-grey flex flex-wrap flex-col justify-center" style="background-image: url({{ image }})">
+                    <div class="highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="green">
+                        Workshops
+                    </div>
+                    <div class="highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="pink">
+                        Educatieve programma's
+                    </div>
+                    <div class="highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="yellow-darker">
+                        Onderwijsondersteuning
+                    </div>
+                    <div class="highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="blue">
+                        Software
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="workshops" class="w-full pt-32">
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-3/12 ml-1/12 px-5 ">
+                <div class="text-4xl highlight-wrapper w-full" data-color="yellow" data-background="green">
+                    Workshops
+                </div>
+            </div>
+            <div class="w-7/12  px-5 flex items-end justify-end">
+                <ul class="list-reset flex items-end">
+                    <li class="zen-item cursor-pointer ml-12 text-green underline" data-target="workshops">Workshops</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="educatieve-programmas">Educative programma's</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="software">Software</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="educatieve-programmas" class="w-full pt-32">
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-3/12 ml-1/12 px-5 ">
+                <div class="text-4xl highlight-wrapper w-full" data-color="yellow" data-background="pink">
+                    Educatieve<br>programma's
+                </div>
+            </div>
+            <div class="w-7/12  px-5 flex items-end justify-end">
+                <ul class="list-reset flex items-end">
+                    <li class="zen-item cursor-pointer ml-12" data-target="workshops">Workshops</li>
+                    <li class="zen-item cursor-pointer ml-12 text-pink underline" data-target="educatieve-programmas">Educative programma's</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="software">Software</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="onderwijsondersteuning" class="w-full pt-32">
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-3/12 ml-1/12 px-5 ">
+                <div class="text-4xl highlight-wrapper w-full" data-color="yellow" data-background="yellow-darker">
+                    Onderwijs-<br>ondersteuning
+                </div>
+            </div>
+            <div class="w-7/12  px-5 flex items-end justify-end">
+                <ul class="list-reset flex items-end">
+                    <li class="zen-item cursor-pointer ml-12" data-target="workshops">Workshops</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="educatieve-programmas">Educative programma's</li>
+                    <li class="zen-item cursor-pointer ml-12 text-yellow-darker underline" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="software">Software</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="software" class="w-full pt-32">
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-3/12 ml-1/12 px-5 ">
+                <div class="text-4xl highlight-wrapper w-full" data-color="yellow" data-background="blue">
+                    Software
+                </div>
+            </div>
+            <div class="w-7/12  px-5 flex items-end justify-end">
+                <ul class="list-reset flex items-end">
+                    <li class="zen-item cursor-pointer ml-12" data-target="workshops">Workshops</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="educatieve-programmas">Educative programma's</li>
+                    <li class="zen-item cursor-pointer ml-12" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
+                    <li class="zen-item cursor-pointer ml-12 text-blue underline" data-target="software">Software</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5 my-12">
+            <div class="w-1/12"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5 text-xl">
+            <div class="px-5 ml-1/12 w-10/12">
+
+                <div class="block-outer">
+                    <div class="block-inner landscape-double">
+                        <div class="content bg-pink flex items-center justify-center" style="background-image: url()"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

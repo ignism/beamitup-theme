@@ -1,0 +1,23 @@
+.swiper-container {
+    .swiper-pagination {
+        @apply flex flex-wrap items-center justify-center;
+        height: 3rem;
+        position: relative;
+        &-bullets {
+            bottom: auto;
+        }
+        &-bullet {
+            background: #c7c8ca;
+            opacity: 1;
+            &-active {
+                background: #000000;
+            }
+        }
+    }
+}
+
+.swiper-slide {
+    width: 100%;
+    height: 50vw;
+    max-height: 800px;
+}

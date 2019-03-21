@@ -30,14 +30,22 @@ class Boilerplate extends Timber\Site {
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+        add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+        add_action('init', array( $this, 'register_advanced_custom_fields' ));
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
-	public function register_post_types() {
-	}
+	public function register_post_types()
+    {
+        require get_template_directory() . '/inc/post-types.php';
+    }
+    /** This is where you can register custom post types. */
+    public function register_advanced_custom_fields()
+    {
+        require get_template_directory() . '/inc/advanced-custom-fields.php';
+    }
 	/** This is where you can register custom taxonomies. */
 	public function register_taxonomies() {
 	}
@@ -106,6 +114,11 @@ class Boilerplate extends Timber\Site {
 	public function myfoo( $text ) {
 		$text .= ' bar!';
 		return $text;
+    }
+    
+    public function css( $text ) {
+		$text = str_replace('<br>', ' \A ', $text);
+		return $text;
 	}
 	/** This is where you can add your own functions to twig.
 	 *
@@ -114,6 +127,7 @@ class Boilerplate extends Timber\Site {
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter( new Twig_SimpleFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		$twig->addFilter( new Twig_SimpleFilter( 'css', array( $this, 'css' ) ) );
 		return $twig;
 	}
 }

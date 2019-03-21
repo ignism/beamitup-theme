@@ -1,0 +1,7 @@
+.nav {
+  height: 4rem;
+}
+
+.logged-in .nav {
+  margin-top: 32px;
+}

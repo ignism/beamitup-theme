@@ -1,0 +1,266 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <header>
+        {% include "components/block.twig" with {
+            orientation: 'landscape-double',
+            color: 'grey-dark'
+        } %}
+    </header>
+
+
+    {#  TEXT MODULE START #}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5">
+            <div class="px-5 w-3/12 ml-1/12">
+                <span class="text-2xl text-green">Onderwerp</span><br>
+                <span class="text-2xl">Klant</span>
+            </div>
+            <div class="px-5 w-5/12 ml-1/12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus culpa doloribus vel, incidunt laboriosam maiores! Ut quasi laborum molestiae accusantium harum magni a! Corrupti laborum beatae rerum accusamus maxime aspernatur?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quia veniam molestias dolor nam optio aut nostrum cumque tempore provident. Quas, quod quasi laboriosam iste quia modi ex commodi odit?</p>
+            </div>
+        </div>
+    </section>
+
+    {#  TEXT MODULE END #}
+
+    {#  VIDEO MODULE START #}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5">
+            <div class="px-5 w-6/12 ml-1/12">
+
+                <div class="w-full px-5 py-10 bg-pink">
+                    <div class="highlight-wrapper text-3xl mb-5" data-color="red-dark" data-background="yellow">
+                        Kijk de film!
+                    </div>
+                    {# MOVIE Placeholder #}
+                    <div class="w-full relative" style="padding-top: 75%">
+                        <div class="absolute pin">
+                            <iframe src="https://player.vimeo.com/video/20968673" width="100%" height="100%" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe>
+                        </div>
+
+                    </div>
+                    {# MOVIE Placeholder #}
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {#  VIDEO MODULE END #}
+
+    {#  SLIDER MODULE START #}
+
+    <section class="w-full my-32">
+        {% include "components/slider.twig" with {
+            slides : [
+                {
+                    text: "1"
+                }, {
+                    text: "2"
+                }, {
+                    text: "3"
+                }
+            ],
+            width: "100%",
+            height: "50vw",
+            pagination: true
+        } %}
+    </section>
+
+    {#  SLIDER MODULE END #}
+
+    {#  IMAGE MODULE START #}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-5/12 ml-1/12 px-5">
+                {% include "components/block.twig" with {
+                    orientation : "landscape",
+                    color: "grey"
+                } %}
+            </div>
+            <div class="w-4/12 ml-1/12 px-5">
+                <span class="text-red text-3xl image-caption">Met MapLab laten we zien<br>
+                    hoe belangrijk het is om te<br>
+                    luisteren naar kinderen.
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+    {#  IMAGE MODULE END #}
+
+    {#  TEXT MODULE START #}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5">
+            <div class="px-5 w-3/12 ml-1/12"></div>
+            <div class="px-5 w-5/12 ml-1/12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus culpa doloribus vel, incidunt laboriosam maiores! Ut quasi laborum molestiae accusantium harum magni a! Corrupti laborum beatae rerum accusamus maxime aspernatur?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem quia veniam molestias dolor nam optio aut nostrum cumque tempore provident. Quas, quod quasi laboriosam iste quia modi ex commodi odit?</p>
+            </div>
+        </div>
+    </section>
+
+    {#  TEXT MODULE END #}
+
+    {#  SLIDER MODULE START #}
+
+    <section class="w-full my-32">
+        {% include "components/slider.twig" with {
+            slides : [
+                {
+                    text: "1"
+                }, {
+                    text: "2"
+                }, {
+                    text: "3"
+                }
+            ],
+            width: "100%",
+            height: "50vw",
+            pagination: true
+        } %}
+    </section>
+
+    {#  SLIDER MODULE END #}
+
+
+    {#  QUOTE MODULE START #}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5 text-purple-darker">
+
+            <div class="quote w-5/12 ml-1/12 mr-6/12 mb-10 px-5 text-3xl">
+                quote opdrachtgever, misschien niet bij deze case, maar zo zou het kunnen, het zal wat langer moeten, het was zeer leerzaam
+            </div>
+            <div class="w-5/12 ml-1/12 px-5">
+                Lia van de Wallen<br>
+                Gemeente Eindhoven
+            </div>
+
+        </div>
+    </section>
+
+    {#  QUOTE MODULE END #}
+
+    {#  WIDE IMAGE MODULE START #}
+
+    <section class="w-full my-32 relative">
+        <div class="absolute pin">
+            {% include "components/block.twig" with {
+                orientation: 'landscape-triple',
+                color: 'pink-lighter'
+            } %}
+        </div>
+
+        <div class="flex flex-wrap -mx-5 pt-16">
+
+            <div class="w-10/12 ml-1/12 px-5">
+
+                {% include "components/block.twig" with {
+                    orientation : "landscape-double",
+                    color: "grey"
+                } %}
+
+                <div class="text-grey pt-5">
+                    Online platform
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    {#  WIDE IMAGE MODULE END #}
+
+    {#  IMAGE MODULE START #}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-5/12 ml-1/12 px-5">
+
+            </div>
+            <div class="w-4/12 ml-1/12 px-5">
+                <span class="text-red text-3xl image-caption">Het online platform vult<br>
+                    zich met ontwerpen van alle<br>
+                    deelnemende scholen.
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+    {#  IMAGE MODULE END #}
+
+    {#  SLIDER SMALL MODULE START #}
+
+    <section class="w-10/12 mx-1/12 my-32">
+        {% include "components/slider.twig" with {
+            slides : [
+                {
+                    text: "1"
+                }, {
+                    text: "2"
+                }, {
+                    text: "3"
+                }
+            ],
+            width: "100%",
+            height: "50vw",
+            pagination: true
+        } %}
+    </section>
+
+    {#  SLIDER SMALL MODULE END #}
+
+    {# OTHER PROJECTS #}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5">
+            <div class="w-4/12 ml-1/12 px-5">
+                <div class="highlight-wrapper text-5xl pb-10" data-color="yellow" data-background="pink-lighter">
+                    Meer<br>
+                    projecten
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5">
+
+            <div class="w-1/12 px-5"></div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+
+            <div class="w-5/12 px-5 ">
+                {% include "components/block.twig" with {
+                    orientation: 'landscape-double',
+                    color: 'grey'
+                } %}
+                <div class="text-xl mt-2">
+                    <span class="text-green">Onderwerp</span><br>
+                    <span class="text-xl">Klant</span>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+{% endblock %}

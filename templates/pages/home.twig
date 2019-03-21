@@ -1,0 +1,158 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <header>
+        {% include "components/slider.twig" with {
+            slides : [
+                {
+                    text: "Tech&Play<br>28 december<br>Beursgebouw"
+                }, {
+                    text: "2"
+                }, {
+                    text: "3"
+                }
+            ],
+            width: "100%",
+            height: "50vw",
+            pagination: true
+        } %}
+    </header>
+
+    {% include "partials/hero.twig" with {
+        text : "We ontwikkelen educatieve programma's,<br>workshops, trainingen, software en<br>projecten oor kinderen<br>in het basis en voortgezet onderwijs.",
+        color: "black"
+    } %}
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5">
+            <div class="px-5 w-5/12 h-32 mt-12 ml-1/12 relative">
+                <div class="cta-block-background absolute mx-5 pin z-auto bg-pink-dark"></div>
+                <div class="cta-block absolute mx-5 pin z-auto bg-pink"></div>
+            </div>
+            <div class="px-5 w-5/12 h-32 mb-12 mr-1/12 relative">
+                <div class="cta-block-background absolute mx-5 pin z-auto bg-purple-dark"></div>
+                <div class="cta-block absolute mx-5 pin z-auto bg-purple"></div>
+            </div>
+        </div>
+        <div class="flex flex-wrap -mx-5">
+            <div class="px-5 w-5/12 h-32 mt-12 ml-1/12 relative">
+                <div class="cta-block-background absolute mx-5 pin z-auto bg-yellow-dark"></div>
+                <div class="cta-block absolute mx-5 pin z-auto bg-yellow"></div>
+            </div>
+            <div class="px-5 w-5/12 h-32 mb-12 mr-1/12 relative">
+                <div class="cta-block-background absolute mx-5 pin z-auto bg-blue-dark"></div>
+                <div class="cta-block absolute mx-5 pin z-auto bg-blue"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full my-32 relative">
+        <div class="flex flex-wrap -mx-5">
+            <div class="px-5 w-full">
+                <div class="fw-image bg-grey"></div>
+            </div>
+        </div>
+
+        {# <div class="block-outer paralax absolute pin-r mr-1/12 w-4/12 px-5" style="top: 80%">
+            <div class="block-inner portrait">
+                <div class="content bg-pink flex items-center justify-center">
+                    <a class="text-pink-darker text-2xl" href="#">Onze werkwijze</a>
+                </div>
+            </div>
+        </div> #}
+    </section>
+
+    <section class="w-full my-32 relative">
+        <div class="flex flex-wrap -mx-5">
+            <div class="px-5 w-5/12 ml-1/12">
+                <div class="bg-yellow p-5">
+                    <p>Instagram</p>
+                    <div class="block-outer">
+                        <div class="block-inner square">
+                            <div class="content bg-grey"></div>
+                        </div>
+                    </div>
+                    <p>en hier ook nog wat</p>
+                </div>
+            </div>
+
+            <div class="px-5 w-4/12 ml-1/12" style="transform: translate(0, -20rem)">
+                <div class="block-outer paralax">
+                    <div class="block-inner portrait">
+                        <div class="content bg-pink flex items-center justify-center">
+                            <a class="text-pink-darker text-2xl" href="#">Onze werkwijze</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include "partials/hero.twig" with {
+        text : "We geloven in de kracht van het spel.<br>In het spel is er ruimte om te fantaseren,<br>te ontdekken én te leren.",
+        color: "red"
+    } %}
+
+    <section class="w-full my-32">
+        {% include "components/slider.twig" with {
+            slides : [
+                {
+                    text: "Greenscreen<br>workshop"
+                }, {
+                    text: "2"
+                }, {
+                    text: "3"
+                }
+            ],
+            width: "100%",
+            height: "50vw",
+            pagination: true
+        } %}
+    </section>
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5 text-xl">
+            <div class="w-5/12 ml-1/12 px-5">
+                {% include "components/link-block.twig" with {
+                    orientation : "landscape",
+                    image: "",
+                    title: "Project",
+                    subtitle: "Klant"
+                } %}
+            </div>
+            <div class="w-4/12 ml-1/12 mt-1/12 px-5">
+                {% include "components/link-block.twig" with {
+                    orientation : "portrait",
+                    image: "",
+                    title: "Project",
+                    subtitle: "Klant"
+                } %}
+            </div>
+            <div class="w-4/12 ml-2/12 px-5">
+                {% include "components/link-block.twig" with {
+                    orientation : "portrait",
+                    image: "",
+                    title: "Project",
+                    subtitle: "Klant"
+                } %}
+            </div>
+
+        </div>
+    </section>
+
+    <section class="w-full my-32">
+        <div class="flex flex-wrap -mx-5 text-xl">
+            <div class="px-5 ml-1/12 w-10/12">
+
+                <div class="block-outer">
+                    <div class="block-inner landscape-double">
+                        <div class="content bg-blue flex items-center justify-center" style="background-image: url()"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
