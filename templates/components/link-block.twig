@@ -1,16 +1,26 @@
+{% set color = "green" %}
+{% if category == "educatieve_programmas" %}
+    {% set color = "purple" %}
+{% elseif category == "onderwijsondersteuning" %}
+    {% set color = "brown" %}
+{% elseif category == "software" %}
+    {% set color = "blue" %}
+{% endif %}
+
 <div class="w-full hover-up">
-<a href="#">
+<a href="{{ link }}">
     {% include "components/block.twig" with {
         orientation : orientation,
-        image: "",
+        mobileOrientation : mobileOrientation,
+        image: thumbnail,
         color: "grey"
     } %}
-    <div class="text-xl mt-2">
-        {{ title }}
+    <div class="text-base md:text-2xl font-medium text-{{ color }} mt-2">
+        {{ subtitle }}
     </div>
-    <div class="flex flex-wrap justify-between items-end">
-        <span class="text-xl">{{ subtitle }}</span>
-        <img src="{{ theme.link}}/assets/arrow.svg">
+    <div class="flex flex-wrap font-medium justify-between items-end">
+        <span class="text-base md:text-2xl">{{ title }}</span>
+        <img class="text-sm md:text-xl" src="{{ theme.link }}/assets/arrow.svg" style="width: 1em; height: 1em;">
     </div>
 </a>
 </div>

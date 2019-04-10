@@ -6,11 +6,10 @@ wrappers.forEach((wrapper) => {
   let background = wrapper.getAttribute('data-background')
   let lines = content.split('<br>')
 
-  console.log(lines)
   wrapper.innerHTML = ''
   delay = 200
   for (let i = 0; i < lines.length; i++) {
-    let line = '<span class="highlight text-' + color + ' bg-' + background + ' " style="animation-delay:' + i * delay + 'ms">' + lines[i] + '</span>'
+    let line = '<span class="highlight font-bold text-' + color + ' bg-' + background + ' " style="animation-delay:' + i * delay + 'ms">' + lines[i] + '</span>'
 
     if (i < lines.length - 1) {
       line += '<br>'

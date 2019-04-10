@@ -4,21 +4,37 @@
 </head>
 {% endblock %}
 
-<body class="max-w-5xl mt-20 mx-auto {{body_class}}" data-template="base.twig">
+<body class="max-w-5xl mt-32 mx-auto {{body_class}}" data-template="base.twig">
 
 {% block header %}
-    <nav class="nav max-w-5xl mx-auto fixed z-50 pin-t w-full flex items-end" role="navigation">
-        <div class="-mx-5 w-full flex flex-wrap justify-between items-end">
-            <div class="w-2/12 px-5 ml-1/12">
-                <h1>Beam it Up</h1>
-            </div>
-            <div class="flex-grow flex items-end px-5 mr-1/12">
-                {% include "components/menu.twig" with {
-                    "menu" : menu.get_items
-                } %}
+    <nav class="nav beam-up md:px-10 lg:px-0 fixed z-70 pin-t w-full max-w-5xl mx-auto" role="navigation">
+        <div class="nav-wrapper w-full py-5 px-5 lg:px-0 relative">
+            <div class="-mx-5 h-12 flex flex-wrap justify-between items-end">
+                <div class="w-8/12 lg:ml-1/12 lg:w-3/12 px-5">
+                    {# <h1 class=""><a href="{{ site.link }}"></a></h1> #}
+                    <a class="logo-wrapper beam-up w-full flex items-end" href="{{ site.link }}">
+                        <img class="logo-beam block" src="{{ theme.link }}/assets/logo/beam.svg" alt="">
+                        <img class="logo-it-up block" src="{{ theme.link }}/assets/logo/it-up.svg" alt="">
+                    </a>
+                </div>
+                <div class="hidden lg:flex lg:w-7/12 items-end px-5 mr-1/12">
+                    {% include "components/menu.twig" with {
+                        "menu" : menu.get_items
+                    } %}
+                </div>
+                <div class="burger w-4/12 px-5 flex items-end flex-col lg:hidden">
+                    <span class="w-8 my-1"></span>
+                    <span class="w-8 my-1"></span>
+                    <span class="w-8 my-1"></span>
+                </div>
             </div>
         </div>
     </nav>
+    <div class="mobile-menu bg-black h-screen w-screen fixed lg:hidden pin-l z-60 px-5 md:px-10" style="background: url({{ theme.link }}/assets/Menu_galaxy.png); background-size: cover; background-position: center">
+        {% include "components/mobile-menu.twig" with {
+            "menu" : menu.get_items
+        } %}
+    </div>
 {% endblock %}
 
 
