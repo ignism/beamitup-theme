@@ -2,6 +2,7 @@
     <div class="swiper-wrapper">
         {% for slide in slides %}
             <div class="swiper-slide relative" style="height: auto; width: auto;">
+                <a target="_blank" href="{{ slide.link }}">
                 <div style="height: auto; width: auto; background-image:url({{ slide.img_src }}); background-position: center; background-size: cover">
                     {% include "components/block.twig" with {
                         orientation: 'square'
@@ -10,6 +11,7 @@
                 <p class="mt-4 text-blue">
                     {{ slide.caption }}
                 </p>
+                </a>
             </div>
         {% endfor %}
     </div>

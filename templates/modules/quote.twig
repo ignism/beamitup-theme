@@ -10,7 +10,7 @@
         {% elseif content.color == '#1B2A75' %}
             {% set ball = "blauw_roze_streep" %}
         {% elseif content.color == '#BA8032' %}
-            {% set ball = "Bruin_rose_streep" %}
+            {% set ball = "bruin_rose_streep" %}
         {% elseif content.color == '#FFB0BF' %}
             {% set ball = "roze_rode_vlek" %}
         {% elseif content.color == '#6C164E' %}
@@ -43,7 +43,7 @@
 
     <div class="row text-purple">
         <div class="w-10/12 lg:w-5/12 ml-1/12 mr-1/12 lg:mr-6/12 mb-10 px-5">
-            <span class="quote text-xl lg:text-3xl">{{ content.text }}</span>
+            <span class="quote text-xl lg:text-3xl leading-tight">{{ content.text|trim|striptags }}</span>
         </div>
         <div class="w-10/12 lg:w-5/12 ml-1/12 px-5">
             {{ content.person.name }}<br>

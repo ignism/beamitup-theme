@@ -2,22 +2,29 @@
 
 {% block content %}
 
-    <header>
+    <header class="relative">
+
+        <div class="absolute pin-t pin-r z-10 w-3/12 lg:w-1/10" style="margin-top: 5%; margin-right: -1%;">
+            {% include "components/planet.twig" with {
+                image : "geel_blauwestip"
+            } %}
+        </div> 
+
         <div class="block-outer">
             <div class="block-inner landscape-triple mobile-square">
                 {% set image = theme.link ~ '/assets/Balk_zwart_spikkels.png' %}
-                <div class="text-2xl lg:text-4xl content bg-grey flex flex-wrap flex-col justify-center" style="background-image: url({{ image }})">
-                    <div class="zen-item cursor-pointer highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="green" data-target="workshops">
-                        Workshops
+                <div class="text-2xl md:text-4xl lg:text-5xl content bg-grey flex flex-wrap flex-col justify-center" style="background-image: url({{ image }})">
+                    <div class="zen-item cursor-pointer mb-2 w-full flex justify-center" data-target="workshops">
+                        <div class="highlight-wrapper" data-color="yellow" data-background="green">Workshops</div>
                     </div>
-                    <div class="zen-item cursor-pointer highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="pink" data-target="educatieve-programmas">
-                        Educatieve programma's
+                    <div class="zen-item cursor-pointer mb-2 w-full flex justify-center"data-target="educatieve-programmas">
+                        <div class="highlight-wrapper" data-color="yellow" data-background="pink" >Educatieve programma's</div>
                     </div>
-                    <div class="zen-item cursor-pointer highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="brown" data-target="onderwijsondersteuning">
-                        Onderwijsondersteuning
+                    <div class="zen-item cursor-pointer mb-2 w-full flex justify-center" data-target="onderwijsondersteuning">
+                        <div class="highlight-wrapper" data-color="yellow" data-background="brown">Onderwijsondersteuning</div>
                     </div>
-                    <div class="zen-item cursor-pointer highlight-wrapper mb-2 w-full flex justify-center" data-color="yellow" data-background="blue" data-target="software">
-                        Software
+                    <div class="zen-item cursor-pointer mb-2 w-full flex justify-center" data-target="software">
+                        <div class="highlight-wrapper" data-color="yellow" data-background="blue">Software</div>
                     </div>
                 </div>
             </div>
@@ -28,16 +35,16 @@
         <div class="row">
 
             <div class="w-full lg:w-3/12 lg:ml-1/12 px-5 ">
-                <div class="text-2xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="green">
+                <div class="-mb-2 text-2xl md:text-3xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="green">
                     Workshops
                 </div>
             </div>
             <div class="hidden w-7/12 pr-5 lg:flex items-end justify-end">
-                <ul class="list-reset flex w-full items-end justify-end">
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium text-green border-green border-b-2" data-target="workshops">Workshops</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="educatieve-programmas">Educatieve programma's</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="software">Software</li>
+                <ul class="list-reset xl:text-xl flex w-full items-end justify-between">
+                    <li class="zen-item cursor-pointer font-medium" data-target="workshops"><span class="text-green border-green border-b-2">Workshops</span></li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="educatieve-programmas">Educatieve programma's</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="software">Software</li>
                 </ul>
             </div>
 
@@ -54,13 +61,13 @@
                             <div class="w-full lg:w-6/12 px-5 mt-10">
                                 <a href="{{ project.link }}">
                                     {% include "components/block.twig" with {
-                                        orientation: 'landscape-double',
-                                        mobileOrientation: 'landscape',
-                                        image: TimberImage(project.meta('thumbnail')).src('large')
+                                        orientation: 'landscape-project',
+                                        mobileOrientation: 'landscape-double',
+                                        image: TimberImage(project.meta('header').image).src('large')
                                     } %}
-                                    <div class="text-xl mt-2">
-                                        <span class="font-medium text-xl text-{{ color }}">{{ project.meta("header").subtitle }}</span><br>
-                                        <span class="font-medium text-xl">{{ project.title }}</span>
+                                    <div class="">
+                                        <div class="font-medium text-xl xl:text-2xl mt-4 mb-1 text-{{ color }}">{{ project.title }}</div>
+                                        <div class="font-medium text-xl xl:text-2xl">{{ project.meta("header").subtitle }}</div>
                                     </div>
                                 </a>
                             </div>
@@ -77,16 +84,16 @@
         <div class="row">
 
             <div class="w-full lg:w-3/12 lg:ml-1/12 px-5 ">
-                <div class="text-2xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="pink">
+                <div class="-mb-2 text-2xl md:text-3xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="pink">
                     Educatieve<br>programma's
                 </div>
             </div>
             <div class="hidden w-7/12 pr-5 lg:flex items-end justify-end">
-                <ul class="list-reset flex w-full items-end justify-end">
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="workshops">Workshops</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium text-purple border-purple border-b-2" data-target="educatieve-programmas">Educatieve programma's</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="software">Software</li>
+                <ul class="list-reset xl:text-xl flex w-full items-end justify-between">
+                    <li class="zen-item cursor-pointer font-medium" data-target="workshops">Workshops</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="educatieve-programmas"><span class="text-purple border-purple border-b-2">Educatieve programma's</span></li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="software">Software</li>
                 </ul>
             </div>
 
@@ -105,11 +112,11 @@
                                     {% include "components/block.twig" with {
                                         orientation: 'landscape-double',
                                         mobileOrientation: 'landscape',
-                                        image: TimberImage(project.meta('thumbnail')).src('large')
+                                        image: TimberImage(project.meta('header').image).src('large')
                                     } %}
-                                    <div class="text-xl mt-2">
-                                        <span class="font-medium text-xl text-{{ color }}">{{ project.meta("header").subtitle }}</span><br>
-                                        <span class="font-medium text-xl">{{ project.title }}</span>
+                                    <div class="">
+                                        <div class="font-medium text-xl xl:text-2xl mt-4 mb-1 text-{{ color }}">{{ project.title }}</div>
+                                        <div class="font-medium text-xl xl:text-2xl">{{ project.meta("header").subtitle }}</div>
                                     </div>
                                 </a>
                             </div>
@@ -126,16 +133,16 @@
         <div class="row">
 
             <div class="w-full lg:w-3/12 lg:ml-1/12 px-5 ">
-                <div class="text-2xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="brown">
+                <div class="-mb-2 text-2xl md:text-3xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="brown">
                     Onderwijs-<br>ondersteuning
                 </div>
             </div>
             <div class="hidden w-7/12 pr-5 lg:flex items-end justify-end">
-                <ul class="list-reset flex w-full items-end justify-end">
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="workshops">Workshops</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="educatieve-programmas">Educatieve programma's</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium text-brown border-brown border-b-2" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="software">Software</li>
+                <ul class="list-reset xl:text-xl flex w-full items-end justify-between">
+                    <li class="zen-item cursor-pointer font-medium" data-target="workshops">Workshops</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="educatieve-programmas">Educatieve programma's</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="onderwijsondersteuning"><span class="text-brown border-brown border-b-2">Onderwijsondersteuning</span></li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="software">Software</li>
                 </ul>
             </div>
 
@@ -154,11 +161,11 @@
                                     {% include "components/block.twig" with {
                                         orientation: 'landscape-double',
                                         mobileOrientation: 'landscape',
-                                        image: TimberImage(project.meta('thumbnail')).src('large')
+                                        image: TimberImage(project.meta('header').image).src('large')
                                     } %}
-                                    <div class="text-xl mt-2">
-                                        <span class="font-medium text-xl text-{{ color }}">{{ project.meta("header").subtitle }}</span><br>
-                                        <span class="font-medium text-xl">{{ project.title }}</span>
+                                    <div class="">
+                                        <div class="font-medium text-xl xl:text-2xl mt-4 mb-1 text-{{ color }}">{{ project.title }}</div>
+                                        <div class="font-medium text-xl xl:text-2xl">{{ project.meta("header").subtitle }}</div>
                                     </div>
                                 </a>
                             </div>
@@ -175,16 +182,16 @@
         <div class="row">
 
             <div class="w-full lg:w-3/12 lg:ml-1/12 px-5 ">
-                <div class="text-2xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="blue">
+                <div class="-mb-2 text-2xl md:text-3xl lg:text-4xl highlight-wrapper w-full" data-color="yellow" data-background="blue">
                     Software
                 </div>
             </div>
             <div class="hidden w-7/12 pr-5 lg:flex items-end justify-end">
-                <ul class="list-reset flex w-full items-end justify-end">
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="workshops">Workshops</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="educatieve-programmas">Educatieve programma's</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
-                    <li class="zen-item cursor-pointer lg:ml-8 xl:ml-12 font-medium text-blue border-blue border-b-2" data-target="software">Software</li>
+                <ul class="list-reset xl:text-xl flex w-full items-end justify-between">
+                    <li class="zen-item cursor-pointer font-medium" data-target="workshops">Workshops</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="educatieve-programmas">Educatieve programma's</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="onderwijsondersteuning">Onderwijsondersteuning</li>
+                    <li class="zen-item cursor-pointer font-medium" data-target="software"><span class="text-blue border-blue border-b-2">Software</span></li>
                 </ul>
             </div>
 
@@ -203,11 +210,11 @@
                                     {% include "components/block.twig" with {
                                         orientation: 'landscape-double',
                                         mobileOrientation: 'landscape',
-                                        image: TimberImage(project.meta('thumbnail')).src('large')
+                                        image: TimberImage(project.meta('header').image).src('large')
                                     } %}
-                                    <div class="text-xl mt-2">
-                                        <span class="font-medium text-xl text-{{ color }}">{{ project.meta("header").subtitle }}</span><br>
-                                        <span class="font-medium text-xl">{{ project.title }}</span>
+                                    <div class="">
+                                        <div class="font-medium text-xl xl:text-2xl mt-4 mb-1 text-{{ color }}">{{ project.title }}</div>
+                                        <div class="font-medium text-xl xl:text-2xl">{{ project.meta("header").subtitle }}</div>
                                     </div>
                                 </a>
                             </div>
@@ -229,14 +236,14 @@
                         <div class="content bg-pink flex items-center justify-center" style="background-image: url({{ theme.link }}/assets/Balk_contact_roze.png)">
                         
                             <div class="text-red font-bold flex flex-col items-start justify-center">
-                                <p class="text-xl md:text-3xl xl:text-4xl">
+                                <p class="text-2xl md:text-4xl xl:text-5xl">
                                     {% include "components/highlight.twig" with {
                                         text : page.meta("footer"),
                                         color: "red",
                                         background: "yellow"
                                     } %}
                                 </p>
-                                <p class="hover-up text-xl md:text-3xl xl:text-4xl">
+                                <p class="hover-up text-2xl md:text-4xl xl:text-5xl">
                                     <a class="text-red" href="mailto:hallo@beamitup.nl">
                                         {% include "components/highlight.twig" with {
                                             text : "hallo@beamitup.nl",
@@ -254,7 +261,7 @@
             </div>
         </div>
 
-        <div class="w-1/12 absolute pin-b pin-r z-50" style="margin-right:5%; margin-bottom: -15% ">
+        <div class="w-3/12 lg:w-2/12 absolute pin-b pin-r z-50" style="margin-right:4%; margin-bottom: -15% ">
             {% include "components/planet.twig" with {
                 image : "blauw_roze_streep"
             } %}

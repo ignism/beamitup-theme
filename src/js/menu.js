@@ -63,9 +63,11 @@ if (nav) {
       nav.classList.remove('hide')
 
       if (window.scrollY < 20) {
-
+          
           nav.classList.add('beam-up')
-        
+          if (window.scrollY < 10) {
+            logoWrapper.classList.add('beam-up')
+          }
       }
     } else {
       // down

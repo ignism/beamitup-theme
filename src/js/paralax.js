@@ -20,7 +20,7 @@ wrappers.forEach((wrapper) => {
 
       if (window.innerWidth > 991) {
         let sin = Math.sin((event.progress - 0.5) * -Math.PI)
-        translation = 'translate(0, ' + sin * 100 / 8 + 'vh)'
+        translation = 'translate(0, ' + sin * 100 / 6 + 'vh)'
       }
       element.style.backgroundPositionY = position
       element.style.transform = translation

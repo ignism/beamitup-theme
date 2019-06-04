@@ -71,6 +71,7 @@ body {
 
 .font-bold {
   font-family: "basis-grotesque-bold";
+  font-weight: 600 !important;
 }
 
 .font-medium {
@@ -132,7 +133,8 @@ a {
 }
 
 p {
-  @apply text-sm leading-tight;
+  @apply text-sm;
+  line-height: 1.4em;
   margin-bottom: 1em;
   &:last-of-type {
     margin-bottom: 0;
@@ -155,7 +157,7 @@ p {
 
 .fw-image {
   width: 100%;
-  height: 50vw;
+  height: 40vw;
   max-height: 800px;
   background-size: cover;
   background-position: center;
@@ -179,7 +181,6 @@ p {
 }
 
 @media (max-width: 1600px) {
-  body,
   html {
     overflow-x: hidden;
   }
@@ -209,4 +210,25 @@ p {
   .text-block-title {
     transform: translate(0, 2.4rem);
   }
+}
+
+
+.text-layout {
+  margin-top: 0;
+  margin-bottom: 0;
+  @apply text-sm;
+}
+
+@screen md {
+  .text-layout {
+    @apply text-lg;
+  }
+}
+
+.text-layout h1, h2, h3, h4, h5, h6 {
+  font-size: 1.25em;
+  margin-bottom: 0.5em;
+  margin-top: 1.5em;
+  font-family: "basis-grotesque-bold";
+  font-weight: 600 !important;
 }

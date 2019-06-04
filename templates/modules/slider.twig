@@ -3,13 +3,28 @@
 {% set classes = "section relative" %}
 {% endif %}
 
+        {% if post.meta('slider_kleuren_combinatie') == "combo_three" %}
+        {% set color_text = 'yellow' %}
+        {% set color_background = 'green' %}
+        {% elseif post.meta('slider_kleuren_combinatie') == "combo_two" %}
+        {% set color_text = 'red' %}
+        {% set color_background = 'pink' %}
+        {% else %}
+        {% set color_text = 'blue' %}
+        {% set color_background = 'yellow' %}
+        {% endif %}
+
 <section class="{{ classes }}">
     
     {% include "components/slider.twig" with {
             slides : content.slides,
             width: "",
             height: "",
-            pagination: true
+            pagination: true,
+            color: {
+              text: 'blue',
+              background: 'yellow'
+            }
     } %}
 
 </section>

@@ -1,7 +1,7 @@
 {% if menu %}
 	<ul class="list-reset w-full flex flex-wrap justify-end">
 	{% for item in menu %}
-		<li class="ml-12 text-lg font-bold {% if (item.slug == page.slug) %}active{% endif %} {{ item.classes | join(' ') }}">
+		<li class="ml-12 text-lg xl:ml-20 xl:text-xl font-bold {% if (item.slug == page.slug) %}active{% endif %} {{ item.classes | join(' ') }}">
             {# {% if item.title == 'contact' %}
             <span class="zen-item cursor-pointer" data-target="footer">{{ item.title }}</span>
             {% else %}

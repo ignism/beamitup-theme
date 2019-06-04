@@ -59,6 +59,9 @@
     &.mobile-landscape-double {
       padding-top: 50%;
     }
+    &.mobile-landscape-project {
+      padding-top: 40%;
+    }
     &.mobile-landscape-triple {
       padding-top: 33%;
     }
@@ -78,6 +81,9 @@
     }
     &.landscape-double {
       padding-top: 50%;
+    }
+    &.landscape-project {
+      padding-top: 40%;
     }
     &.landscape-triple {
       padding-top: 33%;

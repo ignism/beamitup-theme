@@ -15,12 +15,12 @@
         image: thumbnail,
         color: "grey"
     } %}
-    <div class="text-base md:text-2xl font-medium text-{{ color }} mt-2">
-        {{ subtitle }}
+    <div class="text-base md:text-xl xl:text-2xl font-medium text-{{ color }} mt-4 mb-1">
+        {{ title }}
     </div>
     <div class="flex flex-wrap font-medium justify-between items-end">
-        <span class="text-base md:text-2xl">{{ title }}</span>
-        <img class="text-sm md:text-xl" src="{{ theme.link }}/assets/arrow.svg" style="width: 1em; height: 1em;">
+        <span class="text-base md:text-xl xl:text-2xl" style="max-width: calc(100% - 2em)">{{ subtitle }}</span>
+        <img class="text-sm md:text-xl xl:text-2xl" src="{{ theme.link }}/assets/arrow.svg" style="width: 1em; height: 1em; margin-bottom: 7px">
     </div>
 </a>
 </div>

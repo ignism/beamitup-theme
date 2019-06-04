@@ -30,8 +30,8 @@ class Boilerplate extends Timber\Site {
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-        add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
-        add_action('init', array( $this, 'register_advanced_custom_fields' ));
+    add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+    add_action('init', array( $this, 'register_advanced_custom_fields' ));
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
 		parent::__construct();
@@ -116,6 +116,20 @@ class Boilerplate extends Timber\Site {
 		return $text;
     }
     
+    public function isextern( $url ) {
+        if ($url) {
+            $explosion = explode("//", $url);
+            
+            if (substr($explosion[1], 0, 10) == "beamitup.nl") {
+                return false;
+            }
+            return true;
+        }
+
+        return false;
+    }
+    
+
     public function css( $text ) {
 		$text = str_replace('<br>', ' \A ', $text);
 		return $text;
@@ -127,6 +141,7 @@ class Boilerplate extends Timber\Site {
 	public function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
 		$twig->addFilter( new Twig_SimpleFilter( 'myfoo', array( $this, 'myfoo' ) ) );
+		$twig->addFilter( new Twig_SimpleFilter( 'isextern', array( $this, 'isextern' ) ) );
 		$twig->addFilter( new Twig_SimpleFilter( 'css', array( $this, 'css' ) ) );
 		return $twig;
 	}
