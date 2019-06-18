@@ -4,11 +4,12 @@
 </head>
 {% endblock %}
 
-<body class="max-w-5xl mt-32 mx-auto {{body_class}}" data-template="base.twig">
+<body class="mt-32 overflow-x-hidden {{body_class}}" data-template="base.twig">
 
 {% block header %}
-    <nav class="nav beam-up md:px-10 lg:px-0 fixed z-70 pin-t w-full max-w-5xl mx-auto" role="navigation">
-        <div class="nav-wrapper w-full py-5 px-5 lg:px-0 relative">
+
+    <nav class="nav beam-up md:px-10 lg:px-0 fixed z-70 pin-t w-full" role="navigation">
+        <div class="nav-wrapper w-full max-w-5xl mx-auto py-5 px-5 lg:px-0 relative">
             <div class="-mx-5 h-12 flex flex-wrap justify-between items-end">
                 <div class="w-8/12 lg:ml-1/12 lg:w-3/12 px-5">
                     {# <h1 class=""><a href="{{ site.link }}"></a></h1> #}
@@ -30,6 +31,7 @@
             </div>
         </div>
     </nav>
+
     <div class="mobile-menu bg-black h-screen w-screen fixed lg:hidden pin-l z-60 px-5 md:px-10" style="background: url({{ theme.link }}/assets/Menu_galaxy.png); background-size: cover; background-position: center">
         {% include "components/mobile-menu.twig" with {
             "menu" : menu.get_items
@@ -37,11 +39,13 @@
     </div>
 {% endblock %}
 
+<main class="max-w-5xl mx-auto">
 
 {% block content %}
     Sorry, no content
 {% endblock %}
 
+</main>
 
 {% block footer %}
     {{ function('wp_footer') }}

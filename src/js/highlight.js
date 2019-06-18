@@ -37,6 +37,7 @@ wrappers.forEach((wrapper) => {
     svg.style.width = '100%'
     svg.style.height = '1em'
     svg.style.zIndex = '-1'
+    svg.style.overflow = 'visible'
     svg.classList.add('text-' + background, 'fill-current')
 
     let rect = document.createElementNS(xmlns, 'rect')
